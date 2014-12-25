@@ -1,3 +1,5 @@
+#!/usr/bin/env boot
+
 (set-env!
  :resource-paths #{"src"}
  :dependencies '[[org.clojure/clojure "1.6.0"     :scope "provided"]
@@ -12,3 +14,7 @@
         :version "1.0.0")
    (uber)
    (jar :main 'my_namespace)))
+
+(defn -main [& args]
+  (require 'my-namespace)
+  (apply (resolve 'my-namespace/-main) args))
