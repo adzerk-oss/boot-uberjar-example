@@ -8,5 +8,5 @@ You can also run the project's `-main` method without creating an uberjar with:
     ./build.boot
 
 [Boot]:  http://boot-clj.com/
-[badge]: https://travis-ci.org/adzerk/boot-uberjar-example.png?branch=master
-[build]: https://travis-ci.org/adzerk/boot-uberjar-example
+[badge]: https://travis-ci.org/adzerk-oss/boot-uberjar-example.png?branch=master
+[build]: https://travis-ci.org/adzerk-oss/boot-uberjar-example
