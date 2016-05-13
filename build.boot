@@ -12,7 +12,8 @@
    (pom :project 'myproject
         :version "1.0.0")
    (uber)
-   (jar :main 'my_namespace)))
+   (jar :main 'my_namespace)
+   (target)))
 
 (defn -main [& args]
   (require 'my-namespace)
