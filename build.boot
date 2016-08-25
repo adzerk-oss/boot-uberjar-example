@@ -13,6 +13,7 @@
         :version "1.0.0")
    (uber)
    (jar :main 'my_namespace)
+   (sift :include #{#"project.jar"})
    (target)))
 
 (defn -main [& args]
