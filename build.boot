@@ -8,11 +8,12 @@
   "Builds an uberjar of this project that can be run with java -jar"
   []
   (comp
-   (aot :namespace '#{my-namespace})
+   (javac)
    (pom :project 'myproject
         :version "1.0.0")
    (uber)
-   (jar :main 'my_namespace)
+   (jar :main 'main.Main)
+   (sift :include #{#"project.jar"})
    (target)))
 
 (defn -main [& args]
