@@ -2,17 +2,15 @@
 
 (set-env!
  :resource-paths #{"src"}
- :dependencies '[[org.clojure/clojure "1.6.0"     :scope "provided"]])
+ :dependencies `[[org.clojure/clojure ~(clojure-version) :scope "provided"]])
 
 (deftask build
   "Builds an uberjar of this project that can be run with java -jar"
   []
   (comp
-   (javac)
-   (pom :project 'myproject
-        :version "1.0.0")
+   (aot :namespace #{'main.entrypoint})
    (uber)
-   (jar :main 'main.Main)
+   (jar :file "project.jar" :main 'main.entrypoint)
    (sift :include #{#"project.jar"})
    (target)))
 
